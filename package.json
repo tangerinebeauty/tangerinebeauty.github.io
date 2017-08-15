@@ -1,29 +1,23 @@
 {
-  "title": "Agency",
-  "name": "startbootstrap-agency",
-  "version": "4.0.0-alpha",
-  "description": "Agency is a one page HTML theme for Bootstrap.",
-  "keywords": [
-    "css",
-    "sass",
-    "html",
-    "responsive",
-    "theme",
-    "template"
-  ],
-  "homepage": "http://startbootstrap.com/template-overviews/agency",
-  "bugs": {
-    "url": "https://github.com/BlackrockDigital/startbootstrap-agency/issues",
-    "email": "feedback@startbootstrap.com"
-  },
-  "license": "MIT",
-  "author": "Start Bootstrap",
+  "title": "TangerineBeauty.ca",
+  "name": "tangerine-beauty-ca",
+  "version": "0.0.1",
+  "description": "TangerineBeauty.ca website.",
+  "homepage": "http://tangerinebeauty.ca",
+  "author": "Kiky Tangerine",
   "contributors": [
-    "David Miller (http://davidmiller.io/)"
+    "Kiky Tangerine (https://www.linkedin.com/in/kwtangerine/)"
   ],
+  "scripts": {
+    "start": "npm run build",
+    "start:dev": "export NODE_ENV=development && gulp dev",
+    "build": "rimraf ./static && export NODE_ENV=production && gulp ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "export NODE_ENV=production && gulp deploy"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-agency.git"
+    "url": ""
   },
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
