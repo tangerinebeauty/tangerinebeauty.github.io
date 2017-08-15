@@ -9,7 +9,7 @@ var pkg = require('./package.json');
 
 // Compiles SCSS files from /scss into /css
 gulp.task('sass', function() {
-  return gulp.src('scss/agency.scss')
+  return gulp.src('scss/tangerinebeauty.scss')
     .pipe(sass())
     .pipe(gulp.dest('css'))
     .pipe(browserSync.reload({
@@ -19,7 +19,7 @@ gulp.task('sass', function() {
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], function() {
-  return gulp.src('css/agency.css')
+  return gulp.src('css/tangerinebeauty.css')
     .pipe(cleanCSS({
       compatibility: 'ie8'
     }))
@@ -77,12 +77,6 @@ gulp.task('copy', function() {
     ])
     .pipe(gulp.dest('dist/vendor/font-awesome'));
 
-  // Copy html
-  gulp.src([
-      'index.html',
-    ])
-    .pipe(gulp.dest('dist'));
-
   // Copy img
   gulp.src([
         'img/**',
@@ -90,8 +84,16 @@ gulp.task('copy', function() {
       .pipe(gulp.dest('dist/img'));
 })
 
+gulp.task('copy-html', function () {
+  // Copy html
+  return gulp.src([
+    'index.html',
+  ])
+  .pipe(gulp.dest('dist'));
+});
+
 // Default task
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy', 'copy-html']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -104,11 +106,11 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js', 'copy'], function() {
+gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js', 'copy', 'copy-html'], function() {
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('*.html', browserSync.reload);
+  gulp.watch('*.html', ['copy-html', browserSync.reload]);
   gulp.watch('js/**/*.js', browserSync.reload);
 });
