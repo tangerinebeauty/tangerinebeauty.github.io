@@ -25,8 +25,9 @@ header.masthead {
       @include heading-font;
     }
     .btn {
-      background-color: transparent;
-      color: $theme-primary;
+      margin-top: 50px;
+      background-color: $theme-primary;
+      color: white;
     }
   }
 }

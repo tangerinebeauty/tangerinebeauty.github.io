@@ -1,22 +1,52 @@
 // Styling for the book section
-.team-member {
-  margin-bottom: 50px;
-  text-align: center;
-  img {
-    width: 225px;
-    height: 225px;
-    border: 7px solid white;
-  }
-  h4 {
-    margin-top: 25px;
-    margin-bottom: 0;
-    text-transform: none;
-  }
-  p {
-    margin-top: 0;
-  }
-}
+section#booking {
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../img/book-bg.jpg') no-repeat center center fixed;
+  height: 480px;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-.shedul-embed-button-link {
-  margin: 20px;
+  .container {
+    height: 480px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    .row {
+      display: flex;
+      margin: auto;
+    }
+
+    .row-booking-button {
+      color: white;
+      justify-content: center;
+
+      .col-booking-button {
+        .booking-button {
+          display: flex;
+          .btn {
+            display: flex;
+            margin: 30px auto;
+          }
+        }
+
+        .right {
+          text-align: right;
+          margin-right: 30px;
+        }
+      }
+      @media(min-width:768px) {
+        margin: 0;
+        .col-booking-button {
+          display: flex;
+          flex-flow: column;
+          margin: 0;
+          width: 300px;
+        }
+      }
+    }
+  }
 }
