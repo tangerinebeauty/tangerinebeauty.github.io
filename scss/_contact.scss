@@ -1,9 +1,12 @@
 // Styling for the contact section
 section#contact {
-  background-color: $gray-darker;
-  background-image: url('../img/map-image.png');
-  background-repeat: no-repeat;
-  background-position: center;
+  // background-color: $gray-darker;
+  // background-image: url('../img/map-image.png');
+  // background-repeat: no-repeat;
+  // background-position: center;
+  background: $gray-dark; /* fallback for old browsers */
+  background: -webkit-gradient(to left, $gray-dark , $gray); /* Chrome 10-25, Safari 5.1-6 */
+  background: gradient(to left, $gray-dark , $gray); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   .section-heading {
     color: white;
   }
