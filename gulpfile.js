@@ -50,9 +50,9 @@ gulp.task('minify-js', function() {
 gulp.task('copy', function() {
   // Copy img
   gulp.src([
-        'img/**',
-      ])
-      .pipe(gulp.dest('dist/img'));
+      'img/**',
+    ])
+    .pipe(gulp.dest('dist/img'));
 })
 
 gulp.task('copy-html', function () {
